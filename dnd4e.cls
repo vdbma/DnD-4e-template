@@ -27,7 +27,7 @@
 \definecolor{powerred}{HTML}{8B1E1E}
 \definecolor{powergreen}{HTML}{5b8f62}
 
-\definecolor{powerbeige}{HTML}{EFE9D8}
+\definecolor{powerbeige}{HTML}{dad9c6}
 \definecolor{tableblue}{HTML}{1F3A56}
 \definecolor{tablerow}{HTML}{E6E6E6}
 
@@ -197,7 +197,8 @@ UprightFont = *-Regular.otf,
 		left=0pt,
 		right=0pt,
 		top=0pt,
-		bottom=0pt
+		bottom=0pt,
+		interior style={left color=powerbeige, right color=white}
 		]}
 	{\end{tcolorbox}}
 
@@ -214,7 +215,8 @@ UprightFont = *-Regular.otf,
 		left=0pt,
 		right=0pt,
 		top=0pt,
-		bottom=0pt
+		bottom=0pt,
+		interior style={left color=powerbeige, right color=white}
 		]}
 	{\end{tcolorbox}}
 
