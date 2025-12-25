@@ -62,6 +62,13 @@ ItalicFont = *-Italic.otf,
 BoldItalicFont = *-Bold-Italic.otf
 ]{Mentor-Sans-Std}
 
+\newfontfamily\FontMentorSansLight[
+Path = ./fonts/mentor-sans/, % path to the folder containing your OTF files
+UprightFont = *-Light.otf,
+BoldFont = *-Bold.otf,
+ItalicFont = *-Light-Italic.otf
+]{Mentor-Sans-Std}
+
 % Default font
 \setmainfont[
 Path = ./fonts/mentor/, % path to the folder containing your OTF files
@@ -205,25 +212,6 @@ UprightFont = *-Regular.otf,
 		]}
 	{\end{tcolorbox}}
 
-\newenvironment{beigeline}
-{\begin{tcolorbox}[
-		enhanced,
-		breakable,
-		width=\columnwidth,
-		colback=powerbeige,
-		colframe=white,
-		fontupper=\FontMentorSans,
-		boxrule=-4pt,
-		arc=0pt,
-		left=0pt,
-		right=0pt,
-		top=0pt,
-		bottom=0pt,
-		interior style={left color=powerbeige, right color=white}
-		]}
-	{\end{tcolorbox}}
-
-
 
 
 
@@ -269,6 +257,44 @@ UprightFont = *-Regular.otf,
 	},
 	#1
 }
+
+\newenvironment{beigeline}
+{\begin{tcolorbox}[
+		enhanced,
+		breakable,
+		width=\columnwidth,
+		colback=powerbeige,
+		colframe=white,
+		fontupper=\FontMentorSans,
+		boxrule=-4pt,
+		arc=0pt,
+		left=0pt,
+		right=0pt,
+		top=0pt,
+		bottom=0pt,
+		interior style={left color=powerbeige, right color=white}
+		]}
+	{\end{tcolorbox}}
+
+
+\newenvironment{class-traits}
+{\begin{tcolorbox}[
+		enhanced,
+		breakable,
+		width=\columnwidth,
+		colback=powerbeige,
+		colframe=white,
+		fontupper=\FontMentorSansLight\raggedright\parindent-1.5em,
+		boxrule=-4pt,
+		arc=0pt,
+		left=2em,
+		right=5pt,
+		top=0pt,
+		bottom=0pt,
+		interior style={left color=powerbeige, right color=white}
+		] \indent\textbf{CLASS TRAITS}\par}
+	{\end{tcolorbox}}
+
 
 % ======================================================
 % ==================== TABLES ==========================
