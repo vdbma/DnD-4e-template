@@ -223,8 +223,8 @@ UprightFont = *-Regular.otf,
 
 
 % --- Power helper macros ---
-\newcommand{\PowerKeywords}[1]{%
-	\textbf{#1}\par\medskip
+\newcommand{\PowerKeywords}[2]{%
+	\textbf{#1} \ding{70} \textbf{#2}\par\medskip
 }
 
 \newcommand{\PowerLine}[2]{%
