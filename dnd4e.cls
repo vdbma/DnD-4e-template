@@ -32,6 +32,8 @@
 \definecolor{tableblue}{HTML}{1F3A56}
 \definecolor{tablerow}{HTML}{E6E6E6}
 
+\definecolor{phbblue}{HTML}{14324b}
+
 % --- Section titles ---
 \titleformat{\section}
 {\bfseries\large\scshape}
@@ -95,7 +97,7 @@ UprightFont = *-Regular.otf,
 % =============== POWER ENVIRONMENTS ===================
 % ======================================================
 
-\newcommand{\boxtitle}[2]{{\textbf{#1}\hfill #2}}
+\newcommand{\boxtitle}[2]{{\normalsize{\textbf{#1}}\hfill \small{#2}}}
 
 \newtcolorbox{d-power}[2][]{
 	enhanced,
@@ -115,8 +117,8 @@ UprightFont = *-Regular.otf,
 	coltitle=white,
 	title={#2},
 	boxed title style={
-		colback=powerred,
-		colframe=powerred,
+		colback=white,
+		colframe=white,
 		sharp corners,
 		left=4pt,
 		right=4pt,
@@ -144,8 +146,8 @@ UprightFont = *-Regular.otf,
 	coltitle=white,
 	title={#2},
 	boxed title style={
-		colback=powerred,
-		colframe=powerred,
+		colback=white,
+		colframe=white,
 		sharp corners,
 		left=4pt,
 		right=4pt,
@@ -173,8 +175,8 @@ UprightFont = *-Regular.otf,
 	coltitle=white,
 	title={#2},
 	boxed title style={
-		colback=powerred,
-		colframe=powerred,
+		colback=white,
+		colframe=white,
 		sharp corners,
 		left=4pt,
 		right=4pt,
@@ -191,7 +193,7 @@ UprightFont = *-Regular.otf,
 		breakable,
 		width=\columnwidth,
 		colback=powerbeige,
-		colframe=powerbeige,
+		colframe=white,
 		fontupper=\FontMentor\itshape,
 		boxrule=-4pt,
 		arc=0pt,
@@ -209,7 +211,7 @@ UprightFont = *-Regular.otf,
 		breakable,
 		width=\columnwidth,
 		colback=powerbeige,
-		colframe=powerbeige,
+		colframe=white,
 		fontupper=\FontMentorSans,
 		boxrule=-4pt,
 		arc=0pt,
@@ -222,6 +224,9 @@ UprightFont = *-Regular.otf,
 	{\end{tcolorbox}}
 
 
+
+
+
 % --- Power helper macros ---
 \newcommand{\PowerKeywords}[2]{%
 	\textbf{#1} \ding{70} \textbf{#2}\par\medskip
@@ -231,6 +236,40 @@ UprightFont = *-Regular.otf,
 	\textbf{#1} #2\par
 }
 
+
+
+
+\newtcolorbox{overview}[2][]{
+	enhanced,
+	unbreakable,
+	width=\columnwidth,
+	colback=white,
+	colframe=powerbeige,
+	interior style={top color=powerbeige, bottom color=white},
+	boxrule=0mm,
+	arc=0pt,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	boxsep=4pt,
+	bottom=4pt,
+	fonttitle=\FontVecna\huge\centering,
+	fontupper=\FontMentorSans\parindent1em,
+	coltitle=phbblue,
+	colupper=phbblue,
+	title={#2},
+	boxed title style={
+		colback=white,
+		colframe=white,
+		sharp corners,
+		left=4pt,
+		right=4pt,
+		top=2pt,
+		bottom=2pt
+	},
+	#1
+}
+
 % ======================================================
 % ==================== TABLES ==========================
 % ======================================================
@@ -238,7 +277,7 @@ UprightFont = *-Regular.otf,
 \newenvironment{dndtable}[2][] % optional options + column spec
 {%
 	\FontMentorSans
-	\rowcolors{2}{tablerow}{white}%
+	\rowcolors{2}{white}{powerbeige}%
 	\tabularx{\columnwidth}{#2}%
 	\ifx&#1&\else#1\fi
 }
