@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{dnd4e}[2025/01/01 D&D 4e Style Class]
+\ProvidesClass{dnd4e}[2025/12/25 D&D 4e Style Class]
 
 % --- Base class ---
 \LoadClass[10pt,twoside]{book}
