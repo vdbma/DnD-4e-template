@@ -26,6 +26,7 @@
 % --- Colors (approximate 4e palette) ---
 \definecolor{powerred}{HTML}{8B1E1E}
 \definecolor{powergreen}{HTML}{5b8f62}
+\definecolor{powerblack}{HTML}{414342}
 
 \definecolor{powerbeige}{HTML}{dad9c6}
 \definecolor{tableblue}{HTML}{1F3A56}
@@ -101,7 +102,7 @@ UprightFont = *-Regular.otf,
 	breakable,
 	width=\columnwidth,
 	colback=white,
-	colframe=black,
+	colframe=powerblack,
 	boxrule=0mm,
 	arc=0pt,
 	left=0pt,
