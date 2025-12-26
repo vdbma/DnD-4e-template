@@ -11,7 +11,7 @@ This template requires XeLaTex.
 
 ## Contributions welcome
 
-Feel free to contribute (via pull requests) too correct or improve this template !
+Feel free to contribute (via pull requests) to correct or improve this template !
 
 ## Resources and license 
 I found the fonts on open-access
