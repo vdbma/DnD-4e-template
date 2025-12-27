@@ -277,23 +277,37 @@ UprightFont = *-Regular.otf,
 	{\end{tcolorbox}}
 
 
-\newenvironment{class-traits}
-{\begin{tcolorbox}[
-		enhanced,
-		breakable,
-		width=\columnwidth,
+
+\newtcolorbox{traits}[2][]{
+	enhanced,
+	breakable,
+	width=\columnwidth,
+	colback=powerbeige,
+	colframe=white,
+	fontupper=\FontMentorSansLight\raggedright\parindent-1.5em,
+	fonttitle=\FontMentorSansLight\raggedright\parindent-1.5em\bfseries,
+	coltitle=black,
+	boxrule=0pt,
+	arc=0pt,
+	left=2em,
+	right=5pt,
+	top=0pt,
+	bottom=0pt,
+	interior style={left color=powerbeige, right color=white},
+	title={#2},
+	title style={left color=powerbeige, right color=white},
+	boxed title style={
 		colback=powerbeige,
 		colframe=white,
-		fontupper=\FontMentorSansLight\raggedright\parindent-1.5em,
-		boxrule=-4pt,
-		arc=0pt,
-		left=2em,
-		right=5pt,
-		top=0pt,
-		bottom=0pt,
-		interior style={left color=powerbeige, right color=white}
-		] \indent\textbf{CLASS TRAITS}\par}
-	{\end{tcolorbox}}
+		sharp corners,
+		left=4pt,
+		right=4pt,
+		top=2pt,
+		bottom=2pt,
+	},
+	#1	
+}
+
 
 
 % ======================================================
