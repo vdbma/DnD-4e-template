@@ -1,5 +1,6 @@
 \documentclass{dnd4e}
 \usepackage{lipsum}
+\usepackage{multicol}
 
 \begin{document}
 
@@ -9,16 +10,15 @@
 
 \subsection{Sub-section title}
 
-\lipsum[1]
-
-\textit{ Ut ex tellus, auctor sit amet sollicitudin id, pharetra id nunc. Praesent ut mi quis lorem vehicula tempus. Mauris faucibus mi vel sodales aliquam. Vivamus libero lacus, condimentum sed nibh in, tempor lacinia enim. Etiam sit amet turpis quis est pharetra luctus vitae et turpis. Donec at lobortis metus. Aenean vel libero venenatis diam convallis viverra. }
+Examples of \texttt{a-power}, \texttt{e-power}, \texttt{d-power} and
+ \texttt{magic-item} boxes environements.
 
 \begin{a-power}{\boxtitle{Victorious Surge}{Fighter Attack 9}}
 
-	\begin{powerflavor}
+	\begin{flavor}
 		You strike true, and your enemy’s howl of pain is like music to your ears,
 		making you forget about your own wounds.
-	\end{powerflavor}
+	\end{flavor}
 
 	\PowerKeywords{Daily}{Martial, Reliable, Weapon}
 
@@ -34,10 +34,10 @@
 
 \begin{e-power}{\boxtitle{Victorious Surge}{Fighter Attack 9}}
 
-	\begin{powerflavor}
+	\begin{flavor}
 		You strike true, and your enemy’s howl of pain is like music to your ears,
 		making you forget about your own wounds.
-	\end{powerflavor}
+	\end{flavor}
 
 	\PowerKeywords{Daily}{Martial, Reliable, Weapon}
 
@@ -53,10 +53,10 @@
 
 \begin{d-power}{\boxtitle{Victorious Surge}{Fighter Attack 9}}
 
-	\begin{powerflavor}
+	\begin{flavor}
 		You strike true, and your enemy’s howl of pain is like music to your ears,
 		making you forget about your own wounds.
-	\end{powerflavor}
+	\end{flavor}
 
 	\PowerKeywords{Daily}{Martial, Reliable, Weapon}
 
@@ -69,6 +69,20 @@
 	\end{beigeline}
 
 \end{d-power}
+
+
+\begin{magic-item}{\boxtitle{Magic McGuffin}{Level 30}}
+	\begin{flavor}
+		This item was thought to have disapeared from the face of the world when the gods ...
+	\end{flavor}
+	\PowerLine{Item Slot}{Waist, 25,000 gp}
+	\PowerLine{Property}{Grants invulnerability to carrier.}
+	\begin{beigeline}
+		\textbf{Power (daily):} You may make someone else dead.
+	\end{beigeline}
+\end{magic-item}
+
+
 
 
 
@@ -93,6 +107,8 @@
 	143,000 & 20 & +1 & Paragon path feature \\
 \end{dndtable}
 
+\subsection{Text boxes}
+
 \begin{overview}{Cleric overview}
 	\textbf{Characteristics:} You are an extremely good healer.	You have a mix of melee and ranged powers. Most of your attacks deal only moderate damage, but they safeguard your allies or provide bonuses to their attacks.
 
@@ -101,7 +117,9 @@
 	\textbf{Races:} Humans and dwarves make ideal clerics. Elves half-elves, and dragonborn are good clerics too, but they rarely have the same values of piety and reverence found in many human and dwarven cultures. Certain gods attract a preponderance of clerics of a particular race—for example, many (but not all) clerics of Moradin are dwarves—but in general, all races respect all gods to at least some degree. The race you play and the deity your character worships have little effect on your cleric’s ability to utilize divine powers.
 \end{overview}
 
-\begin{traits}{CLASS TRAITS}
+The \texttt{traitsbox} has weird indentation like in the phb and is not breakable.
+
+\begin{traitsbox}{CLASS TRAITS}
 	\textbf{Role:} Leader. You lead by shielding allies with your prayers, healing, and using powers that improve your allies’ attacks.
 
 
@@ -140,6 +158,60 @@
 	\textbf{Class Features:} Channel Divinity, Healer’s Lore, \textit{healing word}, Ritual Casting
 
 	\vspace{1em}
-\end{traits}
+\end{traitsbox}
 
+The \texttt{titlebox} does not have this.
+
+
+\begin{titlebox}{INTERESTING TITLE}
+	\lipsum[][1-5]
+\end{titlebox}
+
+The \texttt{textbox} does not have title either.
+
+\begin{textbox}
+  \lipsum[][1-2]
+	\begin{itemize}
+		\item Wow so much
+		\item items in this
+		\item This item is so long it requires several line just to display it, imagine that !
+		\item list !
+	\end{itemize}
+\end{textbox}
+
+\subsection{List formatting}
+
+Note how the items of the list bellow are aligned with the horizontal start of this paragraph.
+\begin{itemize}
+	\item This
+	\item is
+	\item a
+	\item list
+	\item of
+	\item This item is so long it requires several lines just to display it, imagine that !
+	\item stuff
+	\item ...
+\end{itemize}
+
+\section*{This is a section*}
+
+\subsection*{This is a subsection*}
+
+\paragraph{This is a paragraph} This is some text that has some \textbf{bold elements} but also \textit{italic} elements.
+
+\begin{figure*}[b!]
+	\begin{wide-overview}{Wide overview}
+		This is a two column overview box \texttt{wide-overview}. It should probably always be in a floating environement like \texttt{figure*}.
+
+
+
+		 \begin{multicols}{2}
+		 	You can use this in combination with \texttt{multicols} if you fancy.
+
+		 	\vspace{1cm}
+
+		 	\lipsum[1]
+		 \end{multicols}
+	\end{wide-overview}
+\end{figure*}
 \end{document}
