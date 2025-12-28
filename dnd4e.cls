@@ -444,12 +444,18 @@ UprightFont = *-Regular.otf,
 % ==================== TABLES ==========================
 % ======================================================
 
+
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+	#1\ignorespaces
+}
+
 \newenvironment{dndtable}[2][] % optional options + column spec
 {%
+	\global\let\currentrowstyle\relax
 	\FontMentorSans
-	\rowcolors{2}{white}{powerbeige}%
+	\rowcolors{0}{white}{powerbeige}%
 	\tabularx{\columnwidth}{#2}%
-	\ifx&#1&\else#1\fi
+	\rowcolor{tableblue}
 }
 {%
 	\endtabularx
@@ -458,9 +464,9 @@ UprightFont = *-Regular.otf,
 \newenvironment{wide-dndtable}[2][] % optional options + column spec
 {%
 	\FontMentorSans
-	\rowcolors{2}{white}{powerbeige}%
+	\rowcolors{0}{white}{powerbeige}%
 	\tabularx{\textwidth}{#2}%
-	\ifx&#1&\else#1\fi
+	\rowcolor{tableblue}
 }
 {%
 	\endtabularx
