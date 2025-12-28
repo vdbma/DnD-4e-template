@@ -454,3 +454,14 @@ UprightFont = *-Regular.otf,
 {%
 	\endtabularx
 }
+
+\newenvironment{wide-dndtable}[2][] % optional options + column spec
+{%
+	\FontMentorSans
+	\rowcolors{2}{white}{powerbeige}%
+	\tabularx{\textwidth}{#2}%
+	\ifx&#1&\else#1\fi
+}
+{%
+	\endtabularx
+}
