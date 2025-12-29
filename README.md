@@ -14,10 +14,11 @@ This template requires XeLaTex.
 Feel free to contribute (via pull requests) to correct or improve this template !
 
 ## Resources and license 
-I found the fonts on open-access
+I found the fonts there
 * [Vecna](https://www.dafont.com/vecna.font)
 * [Mentor Std](https://fontsgeek.com/fonts/Mentor-Std-Regular)
 * [Mentor Sans Std](https://fontsgeek.com/fonts/Mentor-Sans-Std-Regular)
 * [Lolth](https://github.com/5e-Cleric/fonts-)
+* [icon font](https://www.enworld.org/threads/new-4e-attack-icon-smilies.224174/page-10#post-4268238)
 
 The license of this repo only applies to the `dnd4e.cls` file. Some other license may apply for the additional resources provided here.
