@@ -19,6 +19,7 @@
 \RequirePackage{pifont}
 \RequirePackage{fontspec}
 \RequirePackage{enumitem}
+\RequirePackage{xspace}
 
 
 \tcbuselibrary{skins,breakable}
@@ -27,6 +28,10 @@
 \definecolor{powerred}{HTML}{8B1E1E}
 \definecolor{powergreen}{HTML}{5b8f62}
 \definecolor{powerblack}{HTML}{414342} 
+
+\definecolor{monstergreen}{HTML}{445129} 
+\definecolor{mmdark}{HTML}{c6c6ae} 
+\definecolor{mmlight}{HTML}{e7e5d2} 
 
 \definecolor{itemorange}{HTML}{cd8f28}
 
@@ -71,6 +76,13 @@ BoldFont = *-Bold.otf,
 ItalicFont = *-Light-Italic.otf
 ]{Mentor-Sans-Std}
 
+\newfontfamily\FontMentorSansBlack[
+Path = ./fonts/mentor-sans/, % path to the folder containing your OTF files
+UprightFont = *-Black.otf,
+BoldFont = *-Black.otf,
+ItalicFont = *-Black-Italic.otf
+]{Mentor-Sans-Std}
+
 % Default font
 \setmainfont[
 Path = ./fonts/mentor/, % path to the folder containing your OTF files
@@ -94,6 +106,27 @@ Path = ./fonts/lolth/, % path to the folder containing your OTF files
 UprightFont = *-Regular.otf,
 ]{Lolth}
 
+\newfontfamily\FontIcons[
+Path = ./fonts/icons/, % path to the folder containing your OTF files
+UprightFont = *.ttf,
+]{icons}
+
+\newcommand{\melee}{{\FontIcons m \xspace}}
+\newcommand{\meleeBase}{{\FontIcons M \xspace}}
+\newcommand{\ranged}{{\FontIcons r \xspace}}
+\newcommand{\rangedBase}{{\FontIcons R \xspace}}
+\newcommand{\area}{{\FontIcons a \xspace}}
+\newcommand{\areaBase}{{\FontIcons A \xspace}}
+\newcommand{\close}{{\FontIcons c \xspace}}
+\newcommand{\closeBase}{{\FontIcons C \xspace}}
+\newcommand{\done}{{\FontIcons 1 \xspace}}
+\newcommand{\dtwo}{{\FontIcons 2 \xspace}}
+\newcommand{\dthree}{{\FontIcons 3 \xspace}}
+\newcommand{\dfour}{{\FontIcons 4 \xspace}}
+\newcommand{\dfive}{{\FontIcons 5 \xspace}}
+\newcommand{\dsix}{{\FontIcons 6 \xspace}}
+
+\newcommand{\diam}{\ding{70}\xspace}
 % ======================================================
 % ===================== LISTS =========================
 % ======================================================
@@ -289,6 +322,90 @@ UprightFont = *-Regular.otf,
 	\textbf{#1} #2\par
 }
 
+
+% ======================================================
+% =============== MONSTER ENVIRONMENTS =================
+% ======================================================
+
+\newcommand{\monsterheader}[4]{{\FontMentorSansBlack\normalsize{#1}\hfill\FontMentorSansBlack#2}\\\FontMentorSans#3\hfill\FontMentorSans #4}
+
+\newtcolorbox{monster}[2][]{
+	enhanced,
+	breakable,
+	width=\columnwidth,
+	colback=mmlight,
+	colframe=monstergreen,
+	boxrule=0mm,
+	arc=0pt,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	boxsep=4pt,
+	bottom=0pt,
+	fonttitle=\FontMentorSans,
+	fontupper=\FontMentorSans,
+	coltitle=white,
+	title={#2},
+	boxed title style={
+		colback=white,
+		colframe=white,
+		sharp corners,
+		left=4pt,
+		right=4pt,
+		top=4pt,
+		bottom=4pt
+	},
+	#1
+}
+
+\newtcolorbox{monsterskill}[2][]{
+	enhanced,
+	breakable,
+	width=\columnwidth,
+	colback=mmlight,
+	colframe=mmdark,
+	boxrule=0mm,
+	arc=0pt,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	boxsep=4pt,
+	bottom=0pt,
+	fonttitle=\FontMentorSans,
+	fontupper=\FontMentorSans,
+	coltitle=black,
+	title={#2},
+	left skip = -4pt,
+	right skip = -4pt,
+	boxed title style={
+		colback=white,
+		colframe=white,
+		sharp corners,
+		left=4pt,
+		right=4pt,
+		top=4pt,
+		bottom=4pt
+	},
+	#1
+}
+
+
+\newenvironment{darkline}
+{\begin{tcolorbox}[
+		enhanced,
+		breakable,
+		width=\columnwidth,
+		colback=mmdark,
+		colframe=white,
+		fontupper=\FontMentorSans,
+		boxrule=-4pt,
+		arc=0pt,
+		left=0pt,
+		right=0pt,
+		top=0pt,
+		bottom=0pt
+		]}
+	{\end{tcolorbox}}
 
 
 % ======================================================
