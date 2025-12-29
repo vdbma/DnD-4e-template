@@ -5,6 +5,8 @@
 
 This LaTeX template is inspired from the PHB of the 4th edition of one of the most famous roleplaying games.
 
+![preview](./preview.png)
+
 ## Usage
 
 This template requires XeLaTex.
