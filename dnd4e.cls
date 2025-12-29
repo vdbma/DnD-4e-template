@@ -28,6 +28,10 @@
 \definecolor{powergreen}{HTML}{5b8f62}
 \definecolor{powerblack}{HTML}{414342} 
 
+\definecolor{monstergreen}{HTML}{445129} 
+\definecolor{mmdark}{HTML}{c6c6ae} 
+\definecolor{mmlight}{HTML}{e7e5d2} 
+
 \definecolor{itemorange}{HTML}{cd8f28}
 
 \definecolor{powerbeige}{HTML}{dad9c6}
@@ -289,6 +293,59 @@ UprightFont = *-Regular.otf,
 	\textbf{#1} #2\par
 }
 
+
+% ======================================================
+% =============== POWER ENVIRONMENTS ===================
+% ================ (and magic items) ====================
+
+\newcommand{\monsterheader}[4]{{\normalsize{\textbf{#1}}\hfill\textbf{#2}}\\#3\hfill #4}
+
+\newtcolorbox{monster}[2][]{
+	enhanced,
+	breakable,
+	width=\columnwidth,
+	colback=mmlight,
+	colframe=monstergreen,
+	boxrule=0mm,
+	arc=0pt,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	boxsep=4pt,
+	bottom=0pt,
+	fonttitle=\FontMentorSans,
+	fontupper=\FontMentorSans,
+	coltitle=white,
+	title={#2},
+	boxed title style={
+		colback=white,
+		colframe=white,
+		sharp corners,
+		left=4pt,
+		right=4pt,
+		top=4pt,
+		bottom=4pt
+	},
+	#1
+}
+
+
+\newenvironment{darkline}
+{\begin{tcolorbox}[
+		enhanced,
+		breakable,
+		width=\columnwidth,
+		colback=mmdark,
+		colframe=white,
+		fontupper=\FontMentorSans,
+		boxrule=-4pt,
+		arc=0pt,
+		left=0pt,
+		right=0pt,
+		top=0pt,
+		bottom=0pt
+		]}
+	{\end{tcolorbox}}
 
 
 % ======================================================
