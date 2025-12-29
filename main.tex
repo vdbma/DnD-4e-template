@@ -239,20 +239,67 @@ The \texttt{textbox} does not have title either.
 
 \subsection{Monster box}
 
+The \texttt{monster} box is breakable. It comes with several icons wrapped into new commands.
+
+
 \begin{monster}{\monsterheader{Scary Monster}{Level 30 Brute}{Medium humanoid}{XP 500}}
 	\textbf{Initiative} +10 \qquad \textbf{Senses}Perception +18; blindsight 10 \par
 	\textbf{HP} 55; \textbf{Bloodied} 43 \par
 	\textbf{AC} 38; \textbf{Fortitude} 32, \textbf{Reﬂex} 38, \textbf{Will} 32 \par
-	\textbf{Saving Throws} +2 \par
 	\textbf{Speed} 10, climb 6 \par
-	%\begin{monsterskill}{Elder of Annihilation}
-	%	The tarrasque’s attacks ignore all resistances.
-	%\end{monsterskill}
-
+	\begin{monsterskill}{\melee \textbf{Melee attack} (standard; at-will) \diam \textbf{Keyword}}
+		Reach 2; +22 vs. AC; 1d8 + 8 damage (3d8 + 8 damage against a dazed target), and the target is dazed (save ends).
+	\end{monsterskill}
+	\begin{monsterskill}{\meleeBase \textbf{Basic melee attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\ranged \textbf{Ranged attack} (standard; at-will)}
+	...
+	\end{monsterskill}
+	\begin{monsterskill}{\rangedBase \textbf{Basic ranged attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\area \textbf{Area attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\areaBase \textbf{Basic area attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\textbf{Rechargeable power} \done \dtwo \dthree \dfour \dfive \dsix}
+		...
+	\end{monsterskill}
 	\begin{darkline}
-		\textbf{Power (daily):} You may make someone else dead.
+		\textbf{Alignment} Evil \qquad \textbf{Languages} Deep Speech, telepathy 20
+
+
+		\textbf{Skills} Arcana +20, Dungeoneering +21, Insight +21
+
+		\begin{tabular}{lll}
+			\textbf{Str} 26 (+17) &
+			\textbf{Dex} 16 (+12) &
+			\textbf{Wis} 25 (+16) \\
+			\textbf{Con} 22 (+15) &
+			\textbf{Int} 23 (+15) &
+			\textbf{Cha} 22 (+15)
+		\end{tabular}
 	\end{darkline}
 \end{monster}
+
+\subsection{List of colors}
+
+\begin{itemize}
+	\item \color{powergreen}\texttt{powergreen}
+	\item \color{powerred}\texttt{powerred}
+	\item \color{powerblack}\texttt{powerblack}
+	\item \color{monstergreen}\texttt{monstergreen}
+	\item \color{mmdark}\texttt{mmdark}
+	\item \color{mmlight}\texttt{mmlight}
+	\item \color{itemorange}\texttt{itemorange}
+	\item \color{powerbeige}\texttt{powerbeige}
+	\item \color{tableblue}\texttt{tableblue}
+	\item \color{tablerow}\texttt{tablerow}
+	\item \color{phbblue}\texttt{phbblue}
+\end{itemize}
 
 
 \end{document}
