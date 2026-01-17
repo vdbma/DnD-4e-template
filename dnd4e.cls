@@ -1,4 +1,4 @@
-\ProvidesClass{dnd4e}[2025/12/25 D&D 4e Style Class]
+\ProvidesClass{dnd4e}[2026/01/17 D&D 4e Style Class]
 
 % --- Base class ---
 \LoadClass[10pt,twoside]{book}
