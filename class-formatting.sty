@@ -1,0 +1,24 @@
+% Default font
+\setmainfont[
+Path = ./fonts/mentor/, % path to the folder containing your OTF files
+UprightFont = *-Regular.otf,
+BoldFont = *-Bold.otf,
+ItalicFont = *-Italic.otf,
+BoldItalicFont = *-Bold-Italic.otf
+]{Mentor-Std}
+
+% ======================================================
+% ===================== TITLES =========================
+% ======================================================
+
+% --- Section titles ---
+\titleformat{\section}
+{\bfseries\large\scshape}
+{}
+{0pt}
+{}
+
+
+\titleformat{\chapter}{\fontsize{40}{50}\bfseries\FontLolth}{\thechapter.}{10pt}{}
+\titleformat*{\section}{\Huge\bfseries\FontLolth}
+\titleformat*{\subsection}{\LARGE\bfseries\FontLolth}

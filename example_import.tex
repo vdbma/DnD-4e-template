@@ -1,0 +1,312 @@
+\documentclass{article}
+
+\usepackage{dnd4e}
+
+\usepackage{lipsum}
+\usepackage{multicol}
+
+\title{This is an article}
+
+\begin{document}
+
+
+\maketitle
+
+For demonstration purposes this is one-column. In practice you should probably only use this in two-columns documents.
+
+Note that by default lists are not changed from your class. To use the \texttt{dnd4e} style lists use the \texttt{lists} option when loading the package with \texttt{\textbackslash usepackage[lists]\{dnd4e\}}
+
+\section{This is a section}
+
+\subsection{This is a subsection}
+
+\paragraph{This is a paragraph} This is some text that has some \textbf{bold elements} but also \textit{italic} elements.
+
+\subsection{Power boxes}
+
+Examples of \texttt{a-power}, \texttt{e-power}, \texttt{d-power} and
+\texttt{magic-item} boxes environements.
+
+\begin{a-power}{\boxtitle{Victorious Surge}{Fighter Attack 9}}
+
+	\begin{flavor}
+		You strike true, and your enemy’s howl of pain is like music to your ears,
+		making you forget about your own wounds.
+	\end{flavor}
+
+	\PowerKeywords{Daily}{Martial, Reliable, Weapon}
+
+	\PowerLine{Standard Action}{Melee weapon}
+	\PowerLine{Target}{One creature}
+	\PowerLine{Attack}{Strength vs. AC}
+	\begin{beigeline}
+
+		\PowerLine{Hit}{3[W] + Strength modifier damage, and you regain hit points as if you had spent a healing surge.}
+	\end{beigeline}
+
+\end{a-power}
+
+\begin{e-power}{\boxtitle{Victorious Surge}{Fighter Attack 9}}
+
+	\begin{flavor}
+		You strike true, and your enemy’s howl of pain is like music to your ears,
+		making you forget about your own wounds.
+	\end{flavor}
+
+	\PowerKeywords{Daily}{Martial, Reliable, Weapon}
+
+	\PowerLine{Standard Action}{Melee weapon}
+	\PowerLine{Target}{One creature}
+	\PowerLine{Attack}{Strength vs. AC}
+	\begin{beigeline}
+
+		\PowerLine{Hit}{3[W] + Strength modifier damage, and you regain hit points as if you had spent a healing surge.}
+	\end{beigeline}
+
+\end{e-power}
+
+\begin{d-power}{\boxtitle{Victorious Surge}{Fighter Attack 9}}
+
+	\begin{flavor}
+		You strike true, and your enemy’s howl of pain is like music to your ears,
+		making you forget about your own wounds.
+	\end{flavor}
+
+	\PowerKeywords{Daily}{Martial, Reliable, Weapon}
+
+	\PowerLine{Standard Action}{Melee weapon}
+	\PowerLine{Target}{One creature}
+	\PowerLine{Attack}{Strength vs. AC}
+	\begin{beigeline}
+
+		\PowerLine{Hit}{3[W] + Strength modifier damage, and you regain hit points as if you had spent a healing surge.}
+	\end{beigeline}
+
+\end{d-power}
+
+
+\begin{magic-item}{\boxtitle{Magic McGuffin}{Level 30}}
+	\begin{flavor}
+		This item was thought to have disapeared from the face of the world when the gods ...
+	\end{flavor}
+	\PowerLine{Item Slot}{Waist, 25,000 gp}
+	\PowerLine{Property}{Grants invulnerability to carrier.}
+	\begin{beigeline}
+		\textbf{Power (daily):} You may make someone else dead.
+	\end{beigeline}
+\end{magic-item}
+
+
+\subsection{List formatting}
+
+Note how the items of the list bellow are aligned with the horizontal start of this paragraph.
+\begin{itemize}
+	\item This
+	\item is
+	\item a
+	\item list
+	\item of
+	\item This item is so long it requires several lines just to display it, imagine that !
+	\item stuff
+	\item ...
+\end{itemize}
+
+
+
+
+\subsection{Tables}
+
+The \texttt{dndtable} is one column wide, the \texttt{wide-dndtable} is two-colum wide
+
+\begin{dndtable}{l c c X}
+	%\rowcolor{tableblue}
+	\color{white}\textbf{Total XP} &
+	\color{white}\textbf{Level} &
+	\color{white}\textbf{Feats Known} &
+	\color{white}\textbf{Class Features and Powers} \\
+	26,000 & 11 & +1 & Ability score increase \\
+	32,000 & 12 & +1 & Paragon path features \\
+	39,000 & 13 & -- & Encounter power \\
+	47,000 & 14 & +1 & Ability score increase \\
+	57,000 & 15 & -- & Daily powers \\
+	69,000 & 16 & +1 & Paragon path feature \\
+	83,000 & 17 & -- & Encounter power \\
+	99,000 & 18 & +1 & Ability score increase \\
+	119,000 & 19 & -- & Daily powers\\
+	143,000 & 20 & +1 & Paragon path feature \\
+\end{dndtable}
+
+\begin{table*}
+	\begin{wide-dndtable}{X c c c c c c}
+		\color{white}\textbf{This}   &
+		\color{white}\textbf{is}   &
+		\color{white}\textbf{a}  &
+		\color{white}\textbf{page} &
+		\color{white}\textbf{wide} &
+		\color{white}\textbf{table} &
+		\color{white}\textbf{ \lipsum[][2]...}\\
+
+		Text & text & text & text & text & text & text \\
+		Text  & text & text & text & text & text & text \\
+		Text & text & text & text & text & text & text \\
+		Text & text & text & text & text & text & text \\
+	\end{wide-dndtable}
+
+\end{table*}
+
+
+\subsection{Text boxes}
+
+\begin{overview}{Cleric overview}
+	\textbf{Characteristics:} You are an extremely good healer.	You have a mix of melee and ranged powers. Most of your attacks deal only moderate damage, but they safeguard your allies or provide bonuses to their attacks.
+
+	\textbf{Religion:} A cleric can choose to worship any deity, but steer clear of choosing an evil or chaotic evil deity unless you have permission from your DM to choose one.
+
+	\textbf{Races:} Humans and dwarves make ideal clerics. Elves half-elves, and dragonborn are good clerics too, but they rarely have the same values of piety and reverence found in many human and dwarven cultures. Certain gods attract a preponderance of clerics of a particular race—for example, many (but not all) clerics of Moradin are dwarves—but in general, all races respect all gods to at least some degree. The race you play and the deity your character worships have little effect on your cleric’s ability to utilize divine powers.
+\end{overview}
+
+The \texttt{traitsbox} has weird indentation like in the phb and is not breakable.
+
+\begin{traitsbox}{CLASS TRAITS}
+	\textbf{Role:} Leader. You lead by shielding allies with your prayers, healing, and using powers that improve your allies’ attacks.
+
+
+	\textbf{Power Source:} Divine. You have been invested with the authority to wield divine power on behalf of a deity, faith, or philosophy.
+
+	\textbf{Key Abilities:} Wisdom, Strength, Charisma
+
+	\vspace{1em}
+
+	\textbf{Armor Proficiencies:} Cloth, leather, hide, chainmail
+
+	\textbf{Weapon Proficiencies:} Simple melee, simple ranged
+
+	\textbf{Implement:} Holy symbol
+
+	\textbf{Bonus to Defense:} +2 Will
+
+	\vspace{1em}
+
+	\textbf{Hit Points at 1st Level:} 12 + Constitution score
+
+	\textbf{Hit Points per Level Gained:} 5
+
+	\textbf{Healing Surges per Day:} 7 + Constitution modifier
+
+	\vspace{1em}
+
+	\textbf{Trained Skills:} Religion. From the class skills list below, choose three more trained skills at 1st level.
+
+	\noindent\textit{Class Skills:} Arcana (Int), Diplomacy (Cha), Heal (Wis), History (Int), Insight (Wis), Religion (Int)
+
+	\vspace{1em}
+
+	\textbf{Build Options:} Battle cleric, devoted cleric
+
+	\textbf{Class Features:} Channel Divinity, Healer’s Lore, \textit{healing word}, Ritual Casting
+
+	\vspace{1em}
+\end{traitsbox}
+
+The \texttt{titlebox} does not have this.
+
+
+\begin{titlebox}{INTERESTING TITLE}
+	\lipsum[][1-5]
+\end{titlebox}
+
+The \texttt{textbox} does not have title either.
+
+\begin{textbox}
+	\lipsum[][1-2]
+	\begin{itemize}
+		\item Wow so much
+		\item items in this
+		\item This item is so long it requires several line just to display it, imagine that !
+		\item list !
+	\end{itemize}
+\end{textbox}
+
+
+\begin{figure*}[b!]
+	\begin{wide-overview}{Wide overview}
+		This is a two column overview box \texttt{wide-overview}. It should probably always be in a floating environement like \texttt{figure*}.
+
+
+
+		\begin{multicols}{2}
+			You can use this in combination with \texttt{multicols} if you fancy.
+
+			\vspace{1cm}
+
+			\lipsum[1]
+		\end{multicols}
+	\end{wide-overview}
+\end{figure*}
+
+\subsection{Monster box}
+
+The \texttt{monster} box is breakable. It comes with several icons wrapped into new commands.
+
+
+\begin{monster}{\monsterheader{Scary Monster}{Level 30 Brute}{Medium humanoid}{XP 500}}
+	\textbf{Initiative} +10 \qquad \textbf{Senses}Perception +18; blindsight 10 \par
+	\textbf{HP} 55; \textbf{Bloodied} 43 \par
+	\textbf{AC} 38; \textbf{Fortitude} 32, \textbf{Reﬂex} 38, \textbf{Will} 32 \par
+	\textbf{Speed} 10, climb 6 \par
+	\begin{monsterskill}{\melee \textbf{Melee attack} (standard; at-will) \diam \textbf{Keyword}}
+		Reach 2; +22 vs. AC; 1d8 + 8 damage (3d8 + 8 damage against a dazed target), and the target is dazed (save ends).
+	\end{monsterskill}
+	\begin{monsterskill}{\meleeBase \textbf{Basic melee attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\ranged \textbf{Ranged attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\rangedBase \textbf{Basic ranged attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\area \textbf{Area attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\areaBase \textbf{Basic area attack} (standard; at-will)}
+		...
+	\end{monsterskill}
+	\begin{monsterskill}{\textbf{Rechargeable power} \done \dtwo \dthree \dfour \dfive \dsix}
+		...
+	\end{monsterskill}
+	\begin{darkline}
+		\textbf{Alignment} Evil \qquad \textbf{Languages} Deep Speech, telepathy 20
+
+
+		\textbf{Skills} Arcana +20, Dungeoneering +21, Insight +21
+
+		\begin{tabular}{lll}
+			\textbf{Str} 26 (+17) &
+			\textbf{Dex} 16 (+12) &
+			\textbf{Wis} 25 (+16) \\
+			\textbf{Con} 22 (+15) &
+			\textbf{Int} 23 (+15) &
+			\textbf{Cha} 22 (+15)
+		\end{tabular}
+	\end{darkline}
+\end{monster}
+
+\subsection{List of colors}
+
+\begin{itemize}
+	\item \color{powergreen}\texttt{powergreen}
+	\item \color{powerred}\texttt{powerred}
+	\item \color{powerblack}\texttt{powerblack}
+	\item \color{monstergreen}\texttt{monstergreen}
+	\item \color{mmdark}\texttt{mmdark}
+	\item \color{mmlight}\texttt{mmlight}
+	\item \color{itemorange}\texttt{itemorange}
+	\item \color{powerbeige}\texttt{powerbeige}
+	\item \color{tableblue}\texttt{tableblue}
+	\item \color{tablerow}\texttt{tablerow}
+	\item \color{phbblue}\texttt{phbblue}
+\end{itemize}
+
+
+\end{document}
