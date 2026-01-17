@@ -11,6 +11,32 @@ This LaTeX template is inspired from the PHB of the 4th edition of one of the mo
 
 This template requires XeLaTex.
 
+### As a class
+
+Start your document with `\documentclass{dnd4e}`.
+
+See `main.tex` file for an example.
+
+### As a package
+
+Import the style file with `\usepackage{dnd4e}`
+
+
+**Package options:**
+
+
+* `lists` if you want to use the list style of the `dnd4e` class, with coloured diamond bullets (defined in `lists.sty`).
+
+
+
+
+Usage: `\usepackage[<option>]{dnd4e}`.
+
+See `example_import.tex` file for an example.
+
+**Note** The environements are made for a two-columns document. You may use it in a one-columns document, but they will then be of the width of the entire page.
+
+
 ## Contributions welcome
 
 Feel free to contribute (via pull requests) to correct or improve this template !
