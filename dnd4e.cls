@@ -4,8 +4,11 @@
 \LoadClass[10pt,twoside]{book}
 
 % --- Page layout ---
+\RequirePackage[margin=1.6cm]{geometry}
 \setlength{\columnsep}{1.5em}
 \twocolumn
+
+
 
 \include{dnd4e.sty}
 
