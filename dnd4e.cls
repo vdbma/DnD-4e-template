@@ -3,4 +3,12 @@
 % --- Base class ---
 \LoadClass[10pt,twoside]{book}
 
+% --- Page layout ---
+\setlength{\columnsep}{1.5em}
+\twocolumn
+
 \include{dnd4e.sty}
+
+\include{class-formatting.sty}
+
+\include{lists.sty}

@@ -1,9 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
 
+\ProvidesPackage{dnd4e}[2026/01/17 D&D 4e Style Package]
 
-% --- Page layout ---
-\setlength{\columnsep}{1.5em}
-\twocolumn
+
+
 
 % --- Packages ---
 \RequirePackage[margin=1.6cm]{geometry}
@@ -38,13 +38,9 @@
 
 \definecolor{phbblue}{HTML}{14324b}
 
-% --- Section titles ---
-\titleformat{\section}
-{\bfseries\large\scshape}
-{}
-{0pt}
-{}
 
+\DeclareOption{lists}{\include{lists.sty}}
+\ProcessOptions\relax
 
 % ======================================================
 % ===================== FONTS ==========================
@@ -78,16 +74,7 @@ Path = ./fonts/mentor-sans/, % path to the folder containing your OTF files
 UprightFont = *-Black.otf,
 BoldFont = *-Black.otf,
 ItalicFont = *-Black-Italic.otf
-]{Mentor-Sans-Std}
-
-% Default font
-\setmainfont[
-Path = ./fonts/mentor/, % path to the folder containing your OTF files
-UprightFont = *-Regular.otf,
-BoldFont = *-Bold.otf,
-ItalicFont = *-Italic.otf,
-BoldItalicFont = *-Bold-Italic.otf
-]{Mentor-Std}
+]{Mentor-Sans-Std}	
 
 
 \newfontfamily\FontVecna[
@@ -124,28 +111,7 @@ UprightFont = *.ttf,
 \newcommand{\dsix}{{\FontIcons 6 \xspace}}
 
 \newcommand{\diam}{\ding{70}\xspace}
-% ======================================================
-% ===================== LISTS =========================
-% ======================================================
-\newlength\listleftmargin
-\setlength\listleftmargin\leftmargin
-\addtolength\listleftmargin{-0.5\labelwidth}
 
-
-\setlist[itemize]{
-	label=\color{phbblue}\ding{70}\color{black},
-	parsep=0pt,
-	itemsep=0pt,
-	leftmargin=\listleftmargin
-}
-
-% ======================================================
-% ===================== TITLES =========================
-% ======================================================
-
-\titleformat{\chapter}{\fontsize{40}{50}\bfseries\FontLolth}{\thechapter.}{10pt}{}
-\titleformat*{\section}{\Huge\bfseries\FontLolth}
-\titleformat*{\subsection}{\LARGE\bfseries\FontLolth}
 
 % ======================================================
 % =============== POWER ENVIRONMENTS ===================
