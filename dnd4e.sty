@@ -523,11 +523,6 @@ UprightFont = *.ttf,
 % ==================== TABLES ==========================
 % ======================================================
 
-
-\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
-	#1\ignorespaces
-}
-
 \newenvironment{dndtable}[2][] % optional options + column spec
 {%
 	\global\let\currentrowstyle\relax
