@@ -16,6 +16,7 @@
 \RequirePackage{fontspec}
 \RequirePackage{enumitem}
 \RequirePackage{xspace}
+\RequirePackage{expl3}
 
 
 \tcbuselibrary{skins,breakable}
@@ -46,7 +47,7 @@
 % ======================================================
 
 \newfontfamily\FontMentor[
-Path = ./fonts/mentor/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/mentor/, % path to the folder containing your OTF files
 UprightFont = *-Regular.otf,
 BoldFont = *-Bold.otf,
 ItalicFont = *-Italic.otf,
@@ -54,7 +55,7 @@ BoldItalicFont = *-Bold-Italic.otf
 ]{Mentor-Std}
 
 \newfontfamily\FontMentorSans[
-Path = ./fonts/mentor-sans/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/mentor-sans/, % path to the folder containing your OTF files
 UprightFont = *-Regular.otf,
 BoldFont = *-Bold.otf,
 ItalicFont = *-Italic.otf,
@@ -62,14 +63,14 @@ BoldItalicFont = *-Bold-Italic.otf
 ]{Mentor-Sans-Std}
 
 \newfontfamily\FontMentorSansLight[
-Path = ./fonts/mentor-sans/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/mentor-sans/, % path to the folder containing your OTF files
 UprightFont = *-Light.otf,
 BoldFont = *-Bold.otf,
 ItalicFont = *-Light-Italic.otf
 ]{Mentor-Sans-Std}
 
 \newfontfamily\FontMentorSansBlack[
-Path = ./fonts/mentor-sans/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/mentor-sans/, % path to the folder containing your OTF files
 UprightFont = *-Black.otf,
 BoldFont = *-Black.otf,
 ItalicFont = *-Black-Italic.otf
@@ -77,7 +78,7 @@ ItalicFont = *-Black-Italic.otf
 
 
 \newfontfamily\FontVecna[
-Path = ./fonts/vecna/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/vecna/, % path to the folder containing your OTF files
 UprightFont = *-Regular.otf,
 BoldFont = *-Bold.otf,
 ItalicFont = *-Italic.otf,
@@ -85,12 +86,12 @@ BoldItalicFont = *-Bold-Italic.otf
 ]{Vecna}
 
 \newfontfamily\FontLolth[
-Path = ./fonts/lolth/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/lolth/, % path to the folder containing your OTF files
 UprightFont = *-Regular.otf,
 ]{Lolth}
 
 \newfontfamily\FontIcons[
-Path = ./fonts/icons/, % path to the folder containing your OTF files
+Path = \CurrentFilePath/fonts/icons/, % path to the folder containing your OTF files
 UprightFont = *.ttf,
 ]{icons}
 
