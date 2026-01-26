@@ -1,3 +1,6 @@
+\RequirePackage{multicol}
+\RequirePackage{titlesec}
+
 % Default font
 \setmainfont[
 Path = ./fonts/mentor/, % path to the folder containing your OTF files
@@ -12,6 +15,8 @@ BoldItalicFont = *-Bold-Italic.otf
 % ======================================================
 
 % --- Section titles ---
+
+
 \titleformat{\section}
 {\bfseries\large\scshape}
 {}
@@ -19,6 +24,6 @@ BoldItalicFont = *-Bold-Italic.otf
 {}
 
 
-\titleformat{\chapter}{\fontsize{40}{50}\bfseries\FontLolth}{\thechapter.}{10pt}{}
-\titleformat*{\section}{\Huge\bfseries\FontLolth}
-\titleformat*{\subsection}{\LARGE\bfseries\FontLolth}
+\titleformat{\chapter}{\color{\maincolor}\fontsize{40}{50}\bfseries\FontLolth}{\thechapter.}{10pt}{}
+\titleformat*{\section}{\color{\maincolor}\Huge\bfseries\FontLolth}
+\titleformat*{\subsection}{\color{black}\LARGE\bfseries\FontLolth}

@@ -11,7 +11,6 @@
 \RequirePackage{tabularx}
 \RequirePackage{colortbl}
 \RequirePackage{tcolorbox}
-\RequirePackage{titlesec}
 \RequirePackage{pifont}
 \RequirePackage{fontspec}
 \RequirePackage{enumitem}
@@ -36,9 +35,14 @@
 \definecolor{tablerow}{HTML}{E6E6E6}
 
 \definecolor{phbblue}{HTML}{14324b}
+\definecolor{dmgred}{HTML}{5b1f34}
+\definecolor{mmgreen}{HTML}{4d5c2e}
 
+\newcommand{\maincolor}{phbblue}
 
 \DeclareOption{lists}{\include{lists.sty}}
+\DeclareOption{dmgred}{\renewcommand{\maincolor}{dmgred}}
+\DeclareOption{mmgreen}{\renewcommand{\maincolor}{mmgreen}}
 \ProcessOptions\relax
 
 % ======================================================
