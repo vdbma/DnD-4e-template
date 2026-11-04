@@ -36,6 +36,12 @@ See `example_import.tex` file for an example.
 
 **Note** The environements are made for a two-columns document. You may use it in a one-columns document, but they will then be of the width of the entire page.
 
+## Compatibility
+
+The compatilibity of this as a package has been tested with XeLaTeX and LuaLaTeX with versions 0.8 and [2dc5f9d](https://github.com/rpgtex/DND-5e-LaTeX-Template/commit/2dc5f9db702f21b2e904dcb9c6f0dbd15b8108f3) of the [D&D 5e LaTeX Template](https://github.com/rpgtex/DND-5e-LaTeX-Template) class.
+
+Note that most boxes here have a white and not transparent background.
+
 
 ## Contributions welcome
 
