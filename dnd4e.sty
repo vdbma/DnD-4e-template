@@ -12,7 +12,28 @@
 \RequirePackage{colortbl}
 \RequirePackage{tcolorbox}
 \RequirePackage{pifont}
+
+% The fonts and encoding need to be saved and
+% then restored, otherwise loading fontspec
+% overwrites the defaults of the class
+\makeatletter
+\let\dndfour@savedencodingdefault\encodingdefault
+\let\dndfour@savedrmdefault\rmdefault
+\let\dndfoursavedsfdefault\sfdefault
+\let\dndfoursavedttdefault\ttdefault
+\let\dndfoursavedfamilydefault\familydefault
+\makeatother
+
 \RequirePackage{fontspec}
+
+\makeatletter
+\let\encodingdefault\dndfour@savedencodingdefault
+\let\rmdefault\dndfour@savedrmdefault
+\let\sfdefault\dndfoursavedsfdefault
+\let\ttdefault\dndfoursavedttdefault
+\let\familydefault\dndfoursavedfamilydefault
+\makeatother
+
 \RequirePackage{enumitem}
 \RequirePackage{xspace}
 \RequirePackage{expl3}
