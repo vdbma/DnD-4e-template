@@ -48,6 +48,7 @@
 \definecolor{monstergreen}{HTML}{445129} 
 \definecolor{mmdark}{HTML}{c6c6ae} 
 \definecolor{mmlight}{HTML}{e7e5d2} 
+\definecolor{mmsec}{HTML}{677344}
 
 \definecolor{itemorange}{HTML}{cd8f28}
 
@@ -321,6 +322,29 @@ UprightFont = *.ttf,
 	\end{tabularx}
 }
 
+
+\newtcolorbox{monstersectionenv}[1][]{
+	enhanced,
+	breakable,
+	width=\columnwidth,
+	colback=mmsec,
+	colframe=mmdark,
+	boxrule=0mm,
+	arc=0pt,
+	left=0pt,
+	right=0pt,
+	leftright skip = -4pt,
+	after skip = 0pt,
+	top=0pt,
+	boxsep=4pt,
+	bottom=0pt,
+	fontupper=\FontMentorSans,
+	#1
+}
+
+
+\newcommand{\monstersection}[1]{\begin{monstersectionenv}{\color{white}\textsc{#1}}\end{monstersectionenv}}
+
 \newtcolorbox{monster}[2][]{
 	enhanced,
 	breakable,
@@ -363,12 +387,12 @@ UprightFont = *.ttf,
 	top=0pt,
 	boxsep=4pt,
 	bottom=0pt,
+	before skip = 0pt,
 	fonttitle=\FontMentorSans,
 	fontupper=\FontMentorSans,
 	coltitle=black,
 	title={#2},
-	left skip = -4pt,
-	right skip = -4pt,
+	leftright skip = -4pt,
 	boxed title style={
 		colback=white,
 		colframe=white,
