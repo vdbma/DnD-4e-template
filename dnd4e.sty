@@ -314,7 +314,12 @@ UprightFont = *.ttf,
 % =============== MONSTER ENVIRONMENTS =================
 % ======================================================
 
-\newcommand{\monsterheader}[4]{{\FontMentorSansBlack\normalsize{#1}\hfill\FontMentorSansBlack#2}\\\FontMentorSans#3\hfill\FontMentorSans #4}
+\newcommand{\monsterheader}[4]{
+	\begin{tabularx}{\textwidth}{@{}Xr@{}}
+	\FontMentorSansBlack\normalsize{#1} & \FontMentorSansBlack #2\\
+	\FontMentorSans#3 & \FontMentorSans #4
+	\end{tabularx}
+}
 
 \newtcolorbox{monster}[2][]{
 	enhanced,
