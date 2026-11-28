@@ -4,7 +4,7 @@
 \LoadClass[10pt,twoside]{book}
 
 % --- Page layout ---
-\RequirePackage[margin=2cm,bottom=2.5cm]{geometry}
+\RequirePackage[margin=2.5cm]{geometry}
 \setlength{\columnsep}{1.5em}
 \twocolumn
 

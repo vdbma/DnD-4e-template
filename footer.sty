@@ -159,6 +159,104 @@
 }
 
 
+
+
+% ==========================================
+% Right page header
+% ==========================================
+
+% Total chapters (loaded from previous compilation)
+\providecommand{\dndTotalChapters}{1}
+
+% Save total chapter count at end of document
+\AtEndDocument{%
+    \immediate\write\@auxout{%
+        \string\gdef\string\dndTotalChapters{\number\value{chapter}}%
+    }%
+}
+
+\ifnum\dndTotalChapters=1
+    \pgfmathsetmacro{\dndHeaderProgress}{0.5}
+\else
+    \pgfmathsetmacro{\dndHeaderProgress}{%
+        (\value{chapter}-1)/(\dndTotalChapters-1)
+    }
+\fi
+
+\pgfmathsetlengthmacro{\dndHeaderOffset}{%
+    \dndHeaderProgress*0.20*\paperheight
+}
+
+\renewcommand{\sectionmark}[1]{%
+    \markright{#1}%
+}
+
+\newcommand{\dnd@rightheader}{%
+    \AtPageUpperLeft{%
+        \begin{tikzpicture}[remember picture, overlay]
+
+            % Decorative PNG
+            \node[anchor=north east, inner sep=0pt]
+            at ([xshift=0pt,yshift=-\dndHeaderOffset]current page.north east)
+            {\includegraphics[height=0.075\paperheight]{img/sidenumber.png}};
+
+            % Chapter number
+            \node[
+                anchor=center,
+                font=\FontLolth\bfseries\Huge,
+                text=white
+            ] at ([xshift=-0.03\paperheight,yshift=-0.04\paperheight-\dndHeaderOffset]current page.north east)
+                {\thechapter};
+
+            % Section title (vertical, uppercase)
+            \node[
+                rotate=90,
+                anchor=center,
+                font=\sffamily\bfseries\small,
+                text=olive
+            ] at ([xshift=-0.1\paperwidth,yshift=-0.15\paperheight]current page.north east)
+                {\MakeUppercase{\rightmark}};
+
+
+
+        \end{tikzpicture}%
+    }%
+}
+
+% Display only on right-hand pages
+\AddToShipoutPictureBG{%
+    \ifodd\value{page}
+        \dnd@rightheader
+    \fi
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \makeatother
 
 \pagestyle{dnd}
