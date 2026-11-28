@@ -17,11 +17,20 @@
 % ==========================================
 
 \makeatletter
+
+% ------------------------------------------
+% Theme colors
+% ------------------------------------------
+
 \def\dnd@phbblue{phbblue}
 \def\dnd@dmgred{dmgred}
 \def\dnd@mmgreen{mmgreen}
 
 \edef\dnd@currentcolor{\maincolor}
+
+% ------------------------------------------
+% Footer image
+% ------------------------------------------
 
 \newcommand{\dndFooterImage}{%
     \ifx\dnd@currentcolor\dnd@phbblue
@@ -39,23 +48,32 @@
     \renewcommand{\dndFooterImage}{#1}%
 }
 
-% Image dimensions
 \newcommand{\dndFooterWidth}{0.25\paperwidth}
-%\newcommand{\dndFooterHeight}{42mm}
 
-% Chapter title
+
+% ==========================================
+% Chapter and section marks
+% ==========================================
+
 \renewcommand{\chaptermark}[1]{%
     \markboth{#1}{}%
 }
+
+\renewcommand{\sectionmark}[1]{%
+    \markright{#1}%
+}
+
 \newcommand{\dndFooterTitle}{%
     CHAPTER \thechapter\ \textbar\ \textbf{\textit{\leftmark}}%
 }
 
+
 % ==========================================
-% Background image
+% Footer background images
 % ==========================================
 
 % Even pages: image on the left
+
 \newcommand{\dnd@backgroundleft}{%
     \AtPageLowerLeft{%
         \includegraphics[
@@ -65,6 +83,7 @@
 }
 
 % Odd pages: image on the right, mirrored
+
 \newcommand{\dnd@backgroundright}{%
     \AtPageLowerLeft{%
         \makebox[\paperwidth][r]{%
@@ -77,60 +96,77 @@
     }%
 }
 
-% ==========================================
-% Foreground text
-% ==========================================
-
 
 % ==========================================
-% Foreground text
+% Footer foreground text
 % ==========================================
 
-\newcommand{\dnd@textleft}{%
+% Even pages: page number
+\newcommand{\dnd@pagenumberleft}{%
     \AtPageLowerLeft{%
         \begin{tikzpicture}[remember picture, overlay]
-            % Page number
             \node[
                 anchor=center,
                 text=white,
                 font=\FontLolth\bfseries\Large
-            ] at ([xshift=0.055\paperwidth,yshift=0.06\paperwidth]current page.south west) {\thepage};
+            ] at ([xshift=0.055\paperwidth,
+                   yshift=0.06\paperwidth]current page.south west)
+                {\thepage};
+        \end{tikzpicture}%
+    }%
+}
 
-            % Chapter title
+% Even pages: chapter title
+\newcommand{\dnd@chaptertitleleft}{%
+    \AtPageLowerLeft{%
+        \begin{tikzpicture}[remember picture, overlay]
             \node[
                 anchor=west,
                 text=black,
                 font=\rmfamily\large
-            ] at ([xshift=0.17\paperwidth,yshift=0.08\paperwidth]current page.south west) {\dndFooterTitle};
+            ] at ([xshift=0.17\paperwidth,
+                   yshift=0.08\paperwidth]current page.south west)
+                {\dndFooterTitle};
         \end{tikzpicture}%
     }%
 }
 
-\newcommand{\dnd@textright}{%
+% Odd pages: page number
+\newcommand{\dnd@pagenumberright}{%
     \AtPageLowerLeft{%
         \begin{tikzpicture}[remember picture, overlay]
-            % Page number
             \node[
                 anchor=center,
                 text=white,
                 font=\sffamily\bfseries\Large
-            ] at ([xshift=-0.055\paperwidth,yshift=0.06\paperwidth]current page.south east) {\thepage};
-
-
-            % Chapter title
-            \node[
-                anchor=east,
-                text=black,
-                font=\rmfamily\large
-            ] at ([xshift=-0.17\paperwidth,yshift=0.08\paperwidth]current page.south east) {\dndFooterTitle};
-
+            ] at ([xshift=-0.055\paperwidth,
+                   yshift=0.06\paperwidth]current page.south east)
+                {\thepage};
         \end{tikzpicture}%
     }%
 }
 
+% Odd pages: chapter title
+\newcommand{\dnd@chaptertitleright}{%
+    \AtPageLowerLeft{%
+        \begin{tikzpicture}[remember picture, overlay]
+            \node[
+                anchor=east,
+                text=black,
+                font=\rmfamily\large
+            ] at ([xshift=-0.17\paperwidth,
+                   yshift=0.08\paperwidth]current page.south east)
+                {\dndFooterTitle};
+        \end{tikzpicture}%
+    }%
+}
+
+
 % ==========================================
 % Page styles
 % ==========================================
+
+% Custom page style
 
 \fancypagestyle{dnd}{%
     \fancyhf{}
@@ -138,125 +174,158 @@
     \renewcommand{\footrulewidth}{0pt}
 }
 
+% Chapter-opening pages
+
 \fancypagestyle{plain}{%
     \fancyhf{}
     \renewcommand{\headrulewidth}{0pt}
     \renewcommand{\footrulewidth}{0pt}
 }
 
+% Clear the standard fancy style too
+
+\fancypagestyle{fancy}{%
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{dnd}
+
+
 % ==========================================
-% Shipout registration
+% Footer shipout registration
 % ==========================================
 
 \AddToShipoutPictureBG{%
-    \ifodd\value{page}
-        \dnd@backgroundright
-        \dnd@textright
-    \else
-        \dnd@backgroundleft
-        \dnd@textleft
+    \ifnum\value{page}>1
+
+        \ifodd\value{page}
+            % Odd pages
+            \dnd@backgroundright
+            \dnd@pagenumberright
+
+            \ifnum\value{chapter}>0
+                \dnd@chaptertitleright
+            \fi
+
+        \else
+            % Even pages
+            \dnd@backgroundleft
+            \dnd@pagenumberleft
+
+            \ifnum\value{chapter}>0
+                \dnd@chaptertitleleft
+            \fi
+
+        \fi
     \fi
 }
 
-
-
-
 % ==========================================
-% Right page header
+% Total chapter count
 % ==========================================
 
-% Total chapters (loaded from previous compilation)
+% Default value for the first compilation.
+% The actual value is read from the .aux file
+% on subsequent compilations.
+
 \providecommand{\dndTotalChapters}{1}
 
-% Save total chapter count at end of document
+% Save the total number of chapters at the end
+% of the document.
+
 \AtEndDocument{%
     \immediate\write\@auxout{%
         \string\gdef\string\dndTotalChapters{\number\value{chapter}}%
     }%
 }
 
-\ifnum\dndTotalChapters=1
-    \pgfmathsetmacro{\dndHeaderProgress}{0.5}
-\else
-    \pgfmathsetmacro{\dndHeaderProgress}{%
-        (\value{chapter}-1)/(\dndTotalChapters-1)
-    }
-\fi
 
-\pgfmathsetlengthmacro{\dndHeaderOffset}{%
-    \dndHeaderProgress*0.20*\paperheight
-}
-
-\renewcommand{\sectionmark}[1]{%
-    \markright{#1}%
-}
+% ==========================================
+% Right-side page header
+% ==========================================
 
 \newcommand{\dnd@rightheader}{%
+
+    % Calculate the vertical position for this chapter.
+    % The image moves between 10% and 90% of the page.
+    % A single-chapter document places it at 50%.
+
+    \ifnum\dndTotalChapters>1
+        \pgfmathsetmacro{\dndHeaderProgress}{%
+            (\value{chapter}-1)/(\dndTotalChapters-1)%
+        }
+    \else
+        \pgfmathsetmacro{\dndHeaderProgress}{0.5}
+    \fi
+
+    \pgfmathsetlengthmacro{\dndHeaderOffset}{%
+        (0.1+0.8*\dndHeaderProgress)*\paperheight
+    }
+
     \AtPageUpperLeft{%
         \begin{tikzpicture}[remember picture, overlay]
 
             % Decorative PNG
-            \node[anchor=north east, inner sep=0pt]
-            at ([xshift=0pt,yshift=-\dndHeaderOffset]current page.north east)
-            {\includegraphics[height=0.075\paperheight]{img/sidenumber.png}};
+            % Its vertical center follows chapter progress.
+
+            \node[
+                anchor=east,
+                inner sep=0pt
+            ] at ([xshift=0pt,
+                   yshift=-\dndHeaderOffset]current page.north east)
+            {%
+                \includegraphics[
+                    height=0.075\paperheight
+                ]{img/sidenumber.png}%
+            };
 
             % Chapter number
+
             \node[
                 anchor=center,
                 font=\FontLolth\bfseries\Huge,
                 text=white
-            ] at ([xshift=-0.03\paperheight,yshift=-0.04\paperheight-\dndHeaderOffset]current page.north east)
-                {\thechapter};
+            ] at ([xshift=-0.03\paperheight,
+                   yshift=-\dndHeaderOffset]current page.north east)
+            {\thechapter};
 
-            % Section title (vertical, uppercase)
+            % Section title
+            % This remains at a fixed vertical position.
+
             \node[
                 rotate=90,
                 anchor=center,
                 font=\sffamily\bfseries\small,
                 text=olive
-            ] at ([xshift=-0.1\paperwidth,yshift=-0.15\paperheight]current page.north east)
-                {\MakeUppercase{\rightmark}};
-
-
+            ] at ([xshift=-0.1\paperwidth,
+                   yshift=-0.15\paperheight]current page.north east)
+            {\MakeUppercase{\rightmark}};
 
         \end{tikzpicture}%
     }%
 }
 
-% Display only on right-hand pages
+
+% ==========================================
+% Header shipout registration
+% ==========================================
+
 \AddToShipoutPictureBG{%
+
+    % Only odd-numbered (right-hand) pages
+
     \ifodd\value{page}
-        \dnd@rightheader
+
+        % Do not show the header before chapter 1
+
+        \ifnum\value{chapter}>0
+            \dnd@rightheader
+        \fi
+
     \fi
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \makeatother
-
-\pagestyle{dnd}
