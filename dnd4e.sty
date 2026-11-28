@@ -74,6 +74,14 @@
 	\newcommand{\dndTemplateRoot}{.}
 \fi
 
+% default themecolor is phbblue
+\colorlet {themecolor} {phbblue} % Set the default theme to Part 1 of the PHB.
+
+\NewDocumentCommand {\dndsetcolortheme} { O {themecolor} }
+  {
+    \colorlet {themecolor}   {#1}
+  }
+
 
 % ======================================================
 % ===================== FONTS ==========================
